@@ -14,7 +14,8 @@ app.post('/upload', function(req, res) {
 
   let sampleFile = req.files.sampleFile;
   let fileName = req.files.sampleFile.name;
-  sampleFile.mv('uploadedfiles'/fileName + '.jpg', function(err) {
+  console.log(fileName);
+  sampleFile.mv('uploadedfiles/'+fileName, function(err) {
     if (err)
       return res.status(500).send(err);
 
