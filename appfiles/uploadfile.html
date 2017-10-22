@@ -1,0 +1,71 @@
+<html>
+<head>
+  <title>
+    Note Buddy
+  </title>
+</head>
+  <body>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    
+    <script>
+      var socket = io();
+      function register() {
+        userinfo = {
+          Username: document.getElementById('username').value,
+          Password: document.getElementById('password').value,
+          Email: document.getElementById('email').value
+        };
+        // alert(userinfo.Username);
+        socket.emit("registered", userinfo);
+      }
+
+      function login() {
+        userinfo = {
+          Username: document.getElementById('login-username').value,
+          Password: document.getElementById('login-password').value,
+        };
+        socket.emit("logined", userinfo);
+      }
+      function updateList() {
+        socket.emit("updateList");
+      }
+      socket.on("listUpdated", (list)=> {
+        let listFiles = document.getElementById('listFiles');
+        alert("This is the client list: " + list);
+        list.map((file)=> {
+          listFiles.innerHTML += '<li id=listItem>'+file+'</li>';
+        });
+      });
+    </script>
+  </body>
+    <form ref='uploadForm' 
+      id='uploadForm' 
+      action='http://localhost:5000/upload' 
+      method='post' 
+      encType="multipart/form-data">
+        <input type="file" name="sampleFile" />
+        <input type='submit' onclick="updateList()" value='Upload!' />
+    </form>
+    <div id='createaccount'>
+      <form action="">
+        <input id = "username" type="text" name="">
+        <br>
+        <input id = "password" type="password" name="">
+        <br>
+        <input id = "email" type="" name="">
+        <button type="submit" onclick="register()">Register!</button>
+      </form>
+    </div>
+    <div id='login'>
+      <form action="">
+        <input id = "login-username" type="text" name="">
+        <br>
+        <input id = "login-password" type="password" name="">
+        <br>
+        <button type="submit" onclick="login()">Login!</button>
+      </form>
+    </div>
+    <ul id="listFiles"></ul>
+</html>
