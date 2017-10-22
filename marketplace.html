@@ -6,6 +6,30 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Raleway:400,500,700" rel="stylesheet">
         <link rel="stylesheet" href="style.css" type="text/css"/>
         <title>Home</title>
+        <style>
+            html{
+                overflow-x: hidden;
+            }
+            #selection{
+                display: inline-block;
+                
+            }
+            #selection div{
+                display: inline-block;
+                max-width: 10000px;
+                padding: 20px;
+                border-radius: 20px;
+                padding: 6px;
+                border: 0;
+                background: #CCD9CE;
+                box-shadow:none;
+                border-radius: 10px;
+                margin-top:10px;
+                flex-grow: 1;
+                width: 350px;
+                height: 450px;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -15,9 +39,12 @@
             <hr size= "30">
             
         </header>
-        <div id="filter">
-            <h3>Filter:</h3>
-            <input type="text" name="filterbox">
+        <div id="selection">
+            <div>Math Notes</div>
+            <div>History Notes</div>
+            <div>Chemistry Notes</div>
+            <div>Biology Notes</div>
+            <div>Physics Notes</div>
         </div>
     </body>
 </html>
