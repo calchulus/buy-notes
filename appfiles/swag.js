@@ -21,17 +21,18 @@ MongoClient.connect(url, function(err, db) {
 });
 
 }
-function login(data) {
-
+function login(data, callback) {
+let status = false;
 MongoClient.connect(url, function(err, db) {
   assert.equal(null, err);
   console.log("Connected successfully to server");
 
-  yolo.findUsers(data, db, function() {
+  yolo.findUsers(data, db, function(data) {
+    console.log("yolo" + data);
     db.close();
+    callback(data);
   });
 });
-
 }
 
 module.exports = {

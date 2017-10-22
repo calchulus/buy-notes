@@ -1,0 +1,139 @@
+<html>
+   <head>
+   <style>
+   div.gallery {
+       border: 1px solid #ccc;
+   }
+   
+   div.gallery:hover {
+       border: 1px solid #777;
+   }
+   
+   div.gallery img {
+       width: auto;
+       height: auto;
+   }
+   
+   div.desc {
+       padding: 15px;
+       text-align: center;
+   }
+   
+   * {
+       box-sizing: border-box;
+   }
+   
+   .responsive {
+       padding: 0 6px;
+       float: left;
+       width: 24.99999%;
+   }
+   
+   @media only screen and (max-width: 400px){
+       .responsive {
+           width: 49.99999%;
+           margin: 6px 0;
+       }
+   }
+   
+   @media only screen and (max-width: 5000px){
+       .responsive {
+           width: 100%;
+/*    } */
+   
+   .clearfix:after {
+       content: "";
+       display: table;
+       clear: both;
+   }
+
+   <body>
+   
+   <h2> Notes From and For Vanderbilt Students</h2>
+   
+   <div class="dropdown">
+           <button onclick="myFunction()" class="dropbtn">Sort By</button>
+           <div id="myDropdown" class="dropdown-content">
+             <a href="#">Date</a>
+             <p></p>
+             <a href="#">Course</a>
+             <p></p>
+             <a href="#">Professor</a>
+           </div>
+         </div>
+         
+
+
+   <style>
+           .dropdown {
+               position: relative;
+               display: inline-block;
+           }
+           
+           .dropdown-content {
+               display: none;
+               position: absolute;
+               background-color: #f9f9f9 ;
+               min-width: 160px;
+               box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+               padding: 12px 16px;
+               z-index: 1;
+           }
+           
+           .dropdown:hover .dropdown-content {
+               display: block;
+           }
+           </style>
+           
+           
+   <p> </p>
+
+   <div class="responsive">
+     <div class="gallery">
+       <a target="_blank" href="img_notes1.jpg">
+         <img src="img_notes1.jpg" alt="Math 2300 (10/08/17) by Marie Dahleh" width="300" height="200">
+       </a>
+       <div class="desc"> Math 2300 notes on Oct 8, 2017 for <br/>Dr. Iona Suvaina
+           <p>Uploaded by Marie Dahleh</p>
+       </div>
+     </div>
+   </div>
+   
+   
+   <div class="responsive">
+     <div class="gallery">
+       <a target="_blank" href="img_notes2.jpg">
+         <img src="img_notes2.jpg" alt="GenChem (10/07/17) by Dave DeVol" width="600" height="400">
+       </a>
+       <div class="desc"> Chem 1601 notes on Oct 7th, 2017 for <br/>Dr. Tara Todd
+       <p>Uploaded by Dave DeVol</p>
+       </div>
+     </div>
+   </div>
+   
+   <div class="responsive">
+     <div class="gallery">
+       <a target="_blank" href="img_notes3.jpg">
+         <img src="img_notes3.jpg" alt="HoD 1100 (10/05/17) by Bob Hernandez" width="600" height="400">
+       </a>
+       <div class="desc">HoD 1100 notes on Oct 5, 2017 for <br/>Dr. Sandra Barnes
+               <p>Uploaded by Bob Hernandez</p>
+       </div>
+     </div>
+   </div>
+   
+   <div class="responsive">
+     <div class="gallery">
+       <a target="_blank" href="img_notes4.jpg">
+         <img src="img_notes4.jpg" alt="Econ 1200 (10/04/17) by Amy Keck" width="600" height="400">
+       </a>
+       <div class="desc">Econ 1200 notes on Oct 4th, 2017 for <br/>Dr. Kevin Huang
+           <p>Uploaded by Amy Keck</p>
+       </div>
+     </div>
+   </div>
+   
+   <div class="clearfix"></div>
+   
+   </body>
+   </html>

@@ -29,18 +29,23 @@ var insertDocuments = function(data, db, callback) {
 }
 
 var findUsers = function(data, db, callback) {
+    let status = false;
     var collection = db.collection('users');
     collection.find(data).toArray(function(err, result) {
         console.log(result.length);
         if (result.length == 0) {
           console.log("Incorrect Login Info");
+          status = false;
         } else {
         console.log(result[0].Username);
         console.log(result[0].Password);
         console.log(result[0].Email);
         console.log("Successfully logged in");
+        status = true;
       }
+      callback(status);
   });
+    return status;
 }
 
 module.exports = {

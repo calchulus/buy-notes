@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta charset="UTF-8"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Raleway:400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <title>Home</title>
+        <style>
+            html{
+                overflow-x: hidden;
+            }
+            #selection{
+                display: inline-block;
+                
+            }
+            #selection div{
+                display: inline-block;
+                padding: 20px;
+                border-radius: 20px;
+                padding: 6px;
+                border: 0;
+                background: #CCD9CE;
+                box-shadow:none;
+                border-radius: 10px;
+                margin-top:10px;
+                flex-grow: 1;
+                width: 350px;
+                height: 560px;
+            }
+            #selection div img {
+                width: 330px;
+                height: auto;
+            }
+            #selection div img:hover {
+                width: 400px;
+                height: auto;
+            }
+            #selection div:hover {
+                width: 420px;
+                height: 650px;
+            }
+            #account-link {
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div id="same-line">
+            <button id="account-link" onclick="window.location.href='account'">Account</button>
+            <button id="account-link" onclick="window.location.href='login'">Sign Out</button>
+            <div class="title" style="text-align: center">
+                <h1 style="font-size: 50px">Note Market</h1>
+            </div>
+
+    <form ref='uploadForm' 
+      id='uploadForm' 
+      action='http://localhost:5000/upload' 
+      method='post' 
+      encType="multipart/form-data">
+        <input type="file" name="sampleFile" />
+        <input type='submit' onclick="updateList()" value='Upload!' />
+    </form>
+
+        </div>
+            <hr size= "30">
+            
+        </header>
+        <div id="selection">
+            <div>Math Notes <img src="notes.jpg"></div>
+            <div>History Notes<img src="notes.jpg"></div>
+            <div>Chemistry Notes<img src="notes.jpg"></div>
+            <div>Biology Notes<img src="notes.jpg"></div>
+            <div>Physics Notes<img src="notes.jpg"></div>
+        </div>
+    </body>
+</html>

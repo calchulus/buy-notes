@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta charset="UTF-8"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Raleway:400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <title>Home</title>
+    </head>
+    <body>
+        <script src="/socket.io/socket.io.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    
+    <script>
+      var socket = io();
+
+      function login() {
+        userinfo = {
+          Username: document.getElementById('login-username').value,
+          Password: document.getElementById('login-password').value,
+        };
+        socket.emit("logined", userinfo);
+      }
+      function confirm() {
+        let action = "confirm();login();window.location.href='login'";
+        document.getElementById('main').innerHTML = '<p>Are you really sure these are your login credentials?</p><button type="button" onclick=' +action+'>Are you reallly sure?</button>';
+      }
+    </script>
+
+        <header>
+            <div class="title" style="text-align: center">
+                <h1 style="font-size: 50px">Note Market</h1>
+            </div>
+            <hr size= "30">
+            
+        </header>
+        <br>
+        <form action="" method="POST">
+            <div id = "main">
+            <h2 style="text-align:center;font-size:30px;">Welcome</h2>
+                <h3>Username:</h3>
+                <input type="text" id = "login-username" name="username"><br>
+                <h3>Password:</h3>
+                <input type="password" id = "login-password" name="password"><br><br>
+                <button type="button" onclick="login();window.location.href='login';">Login</button>
+            </div>
+            <div id="second">
+                
+            </div>
+        </form>
+    </body>
+</html>
